@@ -86,7 +86,7 @@ export default function Hero() {
 			{/* Company Introduction */}
 			<section
 				ref={introRef}
-				className={`py-20 bg-gradient-to-b from-black to-gray-900 transition-all duration-1000 transform
+				className={`py-20 bg-gradient-to-b from-gray-900 to-black transition-all duration-1000 transform
           ${
 				introInView
 					? 'opacity-100 translate-y-0'
@@ -157,14 +157,14 @@ export default function Hero() {
 			{/* New Market Segments */}
 			<section
 				ref={marketRef}
-				className={`py-20 bg-black transition-all duration-1000 transform
+				className={` bg-black transition-all duration-1000 transform
           ${
 				marketInView
 					? 'opacity-100 translate-y-0'
 					: 'opacity-0 translate-y-10'
 			}`}
 			>
-				<div className="container mx-auto px-4">
+				<div className="container m-auto my-16 px-5">
 					<div className="flex flex-col md:flex-row items-center">
 						<div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
 							<h2 className="text-4xl font-bold mb-6">
@@ -207,7 +207,7 @@ export default function Hero() {
         `}
 			>
 				<BackgroundBeamsWithCollision>
-					<div className="container m-8 p-8 relative">
+					<div className="container m-8 p-8 pb-10 relative">
 						<div className="max-w-4xl mx-auto text-center space-y-8">
 							<div className="text-yellow-50">
 								<h1 className="text-center text-5xl font-semibold leading-snug">
@@ -217,7 +217,7 @@ export default function Hero() {
 										<svg
 											viewBox="0 0 286 73"
 											fill="none"
-											className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1"
+											className="absolute -left-2 -right-2 md:-top-1 -top-4 bottom-0 translate-y-1"
 										>
 											<motion.path
 												initial={{ pathLength: 0 }}
@@ -243,7 +243,7 @@ export default function Hero() {
 							<div className="flex flex-col sm:flex-row justify-center gap-4">
 								<Button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] hover:outline-none hover:ring-1 hover:ring-slate-400 hover:ring-offset-1 hover:ring-offset-slate-50">
 									<span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-									<span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-16 py-5 text-sm font-medium text-white backdrop-blur-3xl">
+									<span className="inline-flex animate-shimmer font-semibold h-full w-full cursor-pointer items-center justify-center rounded-full bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-16 py-5 text-sm text-white backdrop-blur-3xl">
 										Get Started
 									</span>
 								</Button>
@@ -254,8 +254,8 @@ export default function Hero() {
 						</div>
 					</div>
 				</BackgroundBeamsWithCollision>
-				<IndustriesSection />
 			</section>
+			<IndustriesSection />
 		</div>
 	);
 }
