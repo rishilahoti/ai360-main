@@ -198,13 +198,11 @@ export default function Hero() {
 			{/* Call to Action */}
 			<section
 				ref={ctaRef}
-				className={`pb-0 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden transition-all duration-1000 transform
-          ${
-				ctaInView
-					? 'opacity-100 translate-y-0'
-					: 'opacity-0 translate-y-10'
-			}
-        `}
+				className={`overflow-hidden transition-all duration-1000 transform ${
+					ctaInView
+						? 'opacity-100 translate-y-0'
+						: 'opacity-0 translate-y-10'
+				}`}
 			>
 				<BackgroundBeamsWithCollision>
 					<div className="container m-8 p-8 pb-10 relative">

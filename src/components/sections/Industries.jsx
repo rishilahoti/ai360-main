@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useMotionValue, motion, useSpring, useTransform } from 'framer-motion';
 import React, { useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const IndustriesSection = () => {
@@ -43,15 +43,19 @@ export const IndustriesSection = () => {
 					<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
 				</Button>
 			</div>
-			<div className="mx-auto py-2 max-w-5xl overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-800">
-				{industries.map((industry, index, isCurved) => (
-					<Link
-						key={index}
-						heading={industry.heading}
-						imgSrc={industry.imgSrc}
-						isCurved={index < 5}
-					/>
-				))}
+			<div className="relative">
+				<div className="mx-auto py-2 max-w-5xl overflow-y-auto max-h-[500px]">
+					{industries.map((industry, index) => (
+						<Link
+							key={index}
+							heading={industry.heading}
+							imgSrc={industry.imgSrc}
+						/>
+					))}
+				</div>
+				<div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 z-10">
+					<ArrowDown />
+				</div>
 			</div>
 		</section>
 	);
@@ -107,7 +111,7 @@ const Link = ({ heading, imgSrc }) => {
 					translateY: '-50%',
 					willChange: 'transform, opacity',
 				}}
-				variants={{ initial: { scale: 0 }, whileHover: { scale: 1 } }}
+				variants={{ initial: { scale: 0 }, whileHover: { scale: 1.3 } }}
 				transition={{ type: 'spring' }}
 				className="absolute z-0"
 			>
